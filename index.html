@@ -106,6 +106,7 @@
             if (isSpeaking) return;
             setIsSpeaking(true);
 
+            // Using empty string as default per environmental rules; setting it in app state overrides for testing.
             const apiKey = appSettings.apiKey || "";
 
             const promptText = `AquaStop Meter Monitoring report for ${appSettings.schoolName}. Our audit discovery shows that ${stats.wastePercent.toFixed(1)} percent of the total water consumption is occurring outside of school hours. This equates to a monthly financial loss of approximately ${Math.round(stats.nightWasteRand)} Rand. We must prioritize night-flow management to reach our zero-waste campus goal.`;
